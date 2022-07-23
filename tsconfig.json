@@ -10,10 +10,14 @@
     "resolveJsonModule": true,
     "isolatedModules": true,
     "esModuleInterop": true,
+    "allowSyntheticDefaultImports": true, // 解决path引入问题一
     "lib": ["esnext", "dom"],
     "skipLibCheck": true,
-    "types": ["element-plus/global"]
+    "baseUrl": ".",
+    "paths": {
+      "@/*":["src/*"]
+    }
   },
-  "include": ["src/**/*.ts", "src/**/*.d.ts", "src/**/*.tsx", "src/**/*.vue"],
+  "include": ["src/**/*.ts", "src/**/*.d.ts", "src/**/*.tsx", "src/**/*.vue", "./auto-imports.d.ts", "./components.d.ts"],
   "references": [{ "path": "./tsconfig.node.json" }]
 }
